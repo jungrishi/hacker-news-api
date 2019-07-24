@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import withFetchData from './withFetchData';
 
 function ListStory(props) {
     return (
@@ -18,4 +19,4 @@ function ListStory(props) {
     )
 }
 
-export default ListStory
+export default withFetchData(ListStory,'topstories.json')

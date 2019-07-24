@@ -3,8 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './component/Header';
-import Post from './component/Post';
 import Story from './component/Story';
+import ListStory from './component/ListStory';
 
 
 
@@ -14,7 +14,7 @@ function App() {
       <>
         <Header />
         <Router>
-          <Route exact path="/" component={Post}/>
+          <Route exact path="/" component={ListStory}/>
           <Route exact path="/stories/:storyId" component={Story} />
         </Router>
       </>

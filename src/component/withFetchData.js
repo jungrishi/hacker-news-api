@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
-import ListStory from './ListStory';
 import getUrl from '../utils/BaseUrl';
 import Loading from './Loading';
 
-class Post extends Component {
-    constructor(props) {
+
+export default (App, url) =>  {
+console.log(url)
+ return class Post extends Component {
+        constructor(props) {
         super(props);
         this.state = {
             stories: [],
             isLoaded: false,
-            i: 30
+            i: 0
         }
     }
 
     componentDidMount() {
-        console.log('com')
-        fetch(getUrl('topstories.json'))
+        fetch(getUrl(url))
         .then(response => response.json())
-        .then(data => this.fetchStory(data))
+        .then(data => {
+            data = data.slice(0, 10);
+            this.fetchStory(data)})   
     }
 
     fetchStory(storiesId, i){
-        let actions = storiesId.slice(0, 10).map(this.fetchSingleStory);
+        let actions = storiesId.map(id=>fetch(getUrl(`/item/${id}.json`))
+        .then(data => data.json()));
         let result = Promise.all(actions);
         result.then(res => {
             this.setState({
@@ -33,29 +37,21 @@ class Post extends Component {
         })
     }
 
-    fetchSingleStory(id) {
-        return new Promise(res => {
-            fetch(getUrl(`/item/${id}.json`))
-            .then(data => {
-                let eachData = data;
-                eachData = eachData.json();
-                res(eachData)
-            })
-        })
-    }
 
     render() {
+        console.log(url)
+
         return (
             <div>
                 <ul>
                     {this.state.isLoaded === false
                                                     ?<Loading />
-                                                    :<ListStory 
-                                                    passState = {this.state.stories}/>}
+                                                    :<App 
+                                                    passState = {this.state.stories} {...this.props}/>}
                 </ul>
             </div>
         )
     }
 }
+}
 
-export default Post;

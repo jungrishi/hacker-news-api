@@ -5,21 +5,50 @@ class Story extends Component {
     constructor(props) {
         super(props);
         this.state ={
-            commentID : this.props.location.state.data,
+            commentID : this.props.location.state.data.kids,
+            comment: '',
+            isLoaded: false
         }
     }
 
     componentDidMount() {
-       const {kids} = this.props.location.state.data; 
-       fetch(getUrl(`item/${kids}.json`) )
+             this.fetchComment(this.state.commentID)
+        }
+
+    fetchComment(parentId) {
+        parentId.map(id => {
+            fetch(getUrl(`item/${id}.json`))
+            .then(res => res.json())
+            .then(data => {
+                this.setState({
+                    comment: data.text,
+                    commentID: data.kids,
+                    isLoaded: true
+                })   
+            })
+            // if (this.state.commentID.length > 0) {
+            //     this.fetchComment()
+            // }
+            
+            })   
+        
     }
+    
+    fetchStory(Id, i){
+        
+    }    
 
     render() {
-        const {kids} = this.props.location.state.data; 
-        console.log(kids)
+        console.log(this.state.commentID)
         return (
-            <div className="pageWrapper">
-                <Headers />
+            <div>
+                {
+                this.state.comment    /* <ul>
+                    {this.state.isLoaded === false
+                                                    ?<Loading />
+                                                    :<Comment 
+                                                    commentState = {this.state.comment} />}
+                </ul> */}
             </div>
         )
     }
