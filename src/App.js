@@ -13,10 +13,10 @@ function App() {
   return (
     <div className="App">
       <>
-      <Router>
-        <h1><Link to="/hacker-news-api/">Hacker News</Link></h1>
+      <Router basename="/hacker-news-api">
+        <h1><Link to="/">Hacker News</Link></h1>
         
-         <Switch baseurl="/hacker-news-api/">
+         <Switch >
           <Route exact path="/" component={ListStory} />
           <Route exact path="/stories/:storyId" component={Story} />
           <Route path="*" component={NotFound} />
