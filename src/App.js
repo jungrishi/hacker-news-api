@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <>
       <Router>
-        <h1><Link to="/">Hacker News</Link></h1>
+        <h1><Link to="/hacker-news-api/">Hacker News</Link></h1>
         
-         <Switch>
+         <Switch baseurl="/hacker-news-api/">
           <Route exact path="/" component={ListStory} />
           <Route exact path="/stories/:storyId" component={Story} />
           <Route path="*" component={NotFound} />
