@@ -2,7 +2,7 @@
   "name": "hacker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jungrishi.github.io/repository-name",
+  "homepage": "https://jungrishi.github.io/hacker-news-api",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
