@@ -1,3 +1,7 @@
+/* .App {
+    position: relative;
+} */
+
 h1 {
     background: #333;
     color: white;
@@ -9,7 +13,7 @@ h1 {
 .listing {
     width: 100%;
     background: #d5d5d5;
-    position: relative;
+    /* position: relative; */
 }
 
 .listing li {
@@ -30,22 +34,56 @@ h1 {
 /*overlay*/
 .pageWrapper {
     /* position: fixed; */
-    border: 1px solid saddlebrown;
-    margin: 0 auto;
-    width: 70%;
     text-align: left;
+    /* margin: 0 auto; */
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-.pageWrapper h2 {
-    padding: 10px 0px;
+h2 {
+    padding: 10px 10px;
     font-size: 30px;
+    text-align: center;
+    background: blue;
+    color: #d5d5d5;
 }
 
-.text {
+h3 {
+    padding: 10px 10px;
+    text-transform:capitalize; 
+}
+
+.comments {
+    color: #333;
     padding: 10px;
     display: block;
-    border: 1px solid black;
 }
+
+
+
+
+
+
+
+
+
+/* .text {
+    padding: 10px;
+    display: block;
+    border-left: 10px solid #faf9f900;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333; 
+    border-top: 1px solid #333; 
+}
+
+.text:hover {
+    border-left: 10px solid red;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333; 
+    border-top: 1px solid #333; 
+
+} */
 
 
 

@@ -36,15 +36,21 @@ class Comment extends Component {
         return (
             <div>
                 {!this.state.isLoaded ? <Loading />
-                    :<li className="text"><div
+                    :<>
+                    <h3>{this.state.data.by}</h3>
+                        <div className="text"
                             dangerouslySetInnerHTML={{ __html: this.state.data.text }}>
                         </div>
+                    <li className="comments">
+                        <div className="child">
                         {this.state.kids && this.state.kids.length > 0 &&
                             (this.state.kids.map((kid, index) => (
                               <Comment key={index} id={kid} />)
                         ))}
-                    </li>        
-                }
+                        </div>
+                    </li>    
+                    </>     
+                    }
             </div>
         )
     }
