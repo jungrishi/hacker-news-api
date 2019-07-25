@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loading from './Loading';
 import getUrl from '../utils/BaseUrl';
+import '../styles/listing.css';
 
 class Comment extends Component {
     constructor(props) {
@@ -31,13 +32,11 @@ class Comment extends Component {
             }
         })   
     }
-
-
     render() {
         return (
             <div>
                 {!this.state.isLoaded ? <Loading />
-                    :<li><div className="text"
+                    :<li className="text"><div
                             dangerouslySetInnerHTML={{ __html: this.state.data.text }}>
                         </div>
                         {this.state.kids && this.state.kids.length > 0 &&

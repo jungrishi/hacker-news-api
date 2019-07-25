@@ -4,18 +4,19 @@ import withFetchData from './withFetchData';
 
 function ListStory(props) {
     return (
-        <div className="listing">
+        <ul className="listing">
             {props.passState.map(list => (
                 <li key={list.id}>
-                   <Link
+                 <a><Link
                         to={{
                             pathname: `/stories/${list.id}`,
                             state: {data: list} }} >        
                             {list.title}
-                    </Link>    
+                    </Link>  
+                  </a>    
                 </li>
             ))}
-        </div>
+        </ul>
     )
 }
 

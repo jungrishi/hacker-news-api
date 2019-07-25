@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
+import '../styles/listing.css';
 
 class Story extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Story extends Component {
         console.log(this.state.commentID)
         return (
             <div className="pageWrapper">
-                <h1>{this.props.location.state.data.title}</h1>
+                <h2>{this.props.location.state.data.title}</h2>
                 <ul>
                     {this.state.commentID && this.state.commentID.length > 0 && (   
                             this.state.commentID.map((kid, index) => (
