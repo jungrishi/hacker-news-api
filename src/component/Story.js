@@ -18,7 +18,7 @@ class Story extends Component {
                 <ul>
                     {this.state.commentID && this.state.commentID.length > 0 && (   
                             this.state.commentID.map((kid, index) => (
-                            <Comment key={index} id={kid} />
+                            <li className="comments"><Comment key={index} id={kid} /></li>
                         )
                     ))}
                 </ul>

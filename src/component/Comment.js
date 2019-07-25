@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Loading from './Loading';
 import getUrl from '../utils/BaseUrl';
 import '../styles/listing.css';
+// import Label from './Label'; 
 
 class Comment extends Component {
     constructor(props) {
@@ -9,8 +10,10 @@ class Comment extends Component {
         this.state = {
             data: [],
             kids: undefined,
-            isLoaded: false
+            isLoaded: false,
+            depth: 3
         }
+    this.i =0;    
     }
 
     componentDidMount() {
@@ -27,28 +30,28 @@ class Comment extends Component {
                 this.setState({
                     data: data,
                     kids: kids,
-                    isLoaded: !this.isLoaded
+                    isLoaded: !this.isLoaded,
                 })   
             }
         })   
     }
     render() {
         return (
-            <div>
+            <div className="hello">
                 {!this.state.isLoaded ? <Loading />
-                    :<>
+                    :<>                    
                     <h3>{this.state.data.by}</h3>
-                        <div className="text"
+                    <div className="text"
                             dangerouslySetInnerHTML={{ __html: this.state.data.text }}>
                         </div>
-                    <li className="comments">
                         <div className="child">
-                        {this.state.kids && this.state.kids.length > 0 &&
+                        {this.state.kids && this.state.kids.length > 0 &&   
                             (this.state.kids.map((kid, index) => (
                               <Comment key={index} id={kid} />)
-                        ))}
+                        ))
+                        }
                         </div>
-                    </li>    
+                      
                     </>     
                     }
             </div>
