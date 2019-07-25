@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loading from './Loading';
-import getUrl from '../utils/BaseUrl';
+import {BASEURL} from '../utils/global';
 import '../styles/listing.css';
 // import Label from './Label'; 
 
@@ -21,7 +21,7 @@ class Comment extends Component {
    }
 
     fetchComment(id) {
-        fetch(getUrl(`item/${id}.json`))
+        fetch(BASEURL + `item/${id}.json`)
         .then(res => res.json())
         .then(data => {
             let kids;

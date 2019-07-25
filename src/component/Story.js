@@ -11,7 +11,6 @@ class Story extends Component {
     }
 
     render() {
-        console.log(this.state.commentID)
         return (
             <div className="pageWrapper">
                 <h2>{this.props.location.state.data.title}</h2>
