@@ -43,9 +43,9 @@ console.log(url)
 
         return (
             <div>
-                <ul>
+                <ul className="listing">
                     {this.state.isLoaded === false
-                                                    ?<Loading />
+                                                    ?<Loading i='1' />
                                                     :<App 
                                                     passState = {this.state.stories} {...this.props}/>}
                 </ul>

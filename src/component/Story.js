@@ -16,11 +16,13 @@ class Story extends Component {
             <div className="pageWrapper">
                 <h2>{this.props.location.state.data.title}</h2>
                 <ul>
+                <li className="comments">
                     {this.state.commentID && this.state.commentID.length > 0 && (   
                             this.state.commentID.map((kid, index) => (
-                            <li className="comments"><Comment key={index} id={kid} /></li>
+                            <Comment key={index} id={kid} />
                         )
                     ))}
+                    </li>
                 </ul>
             </div>
         )

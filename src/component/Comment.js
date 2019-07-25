@@ -47,7 +47,10 @@ class Comment extends Component {
                         <div className="child">
                         {this.state.kids && this.state.kids.length > 0 &&   
                             (this.state.kids.map((kid, index) => (
-                              <Comment key={index} id={kid} />)
+                                <div key={index} className="descendant-comment">
+                              <Comment  id={kid} />
+                              </div>
+                              )
                         ))
                         }
                         </div>
