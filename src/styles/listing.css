@@ -1,0 +1,55 @@
+h1 {
+    background: #333;
+    color: white;
+    font-size: 90px;
+    padding: 10px 0px; 
+    width: 100%;
+}
+
+.listing {
+    width: 100%;
+    background: #d5d5d5;
+    position: relative;
+}
+
+.listing li {
+    font-size: 20px;
+    padding: 20px 0px;
+    border-bottom: 1px solid black;
+}
+
+.listing li a {
+    text-decoration: none;
+    color: black; 
+}
+
+.listing li a:hover {
+    color: blue;
+}
+
+/*overlay*/
+.pageWrapper {
+    /* position: fixed; */
+    border: 1px solid saddlebrown;
+    margin: 0 auto;
+    width: 70%;
+    text-align: left;
+}
+
+.pageWrapper h2 {
+    padding: 10px 0px;
+    font-size: 30px;
+}
+
+.text {
+    padding: 10px;
+    display: block;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
