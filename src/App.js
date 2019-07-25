@@ -25,7 +25,7 @@ function App() {
          {/* <ListStory/> */}
           <Route exact path="/stories/:storyId" component={Story} />
           <Route exact path="/" component={ListStory} />
-          <Route path = "*" component={NotFound} />
+          <Route component={NotFound} />
         </Router>
       </>
     </div>
