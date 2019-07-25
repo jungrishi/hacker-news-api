@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Story from './component/Story';
 import ListStory from './component/ListStory';
 import './styles/listing.css';
+import NotFound from './component/NotFound';
 
 
 
@@ -24,6 +25,7 @@ function App() {
          {/* <ListStory/> */}
           <Route exact path="/stories/:storyId" component={Story} />
           <Route exact path="/" component={ListStory} />
+          <Route path = "*" component={NotFound} />
         </Router>
       </>
     </div>
