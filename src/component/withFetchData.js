@@ -15,6 +15,10 @@ export default (App, url) =>  {
     }
 
     componentDidMount() {
+        console.log({
+            BASEURL,
+            url
+        })
         fetch(BASEURL + url)
         .then(response => response.json())
         .then(data => {

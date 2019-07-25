@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route,Switch, Link } from 'react-router-dom';
 import Story from './component/Story';
 import ListStory from './component/ListStory';
 import './styles/listing.css';
+import './styles/responsive.css';
 import NotFound from './component/NotFound';
 
 

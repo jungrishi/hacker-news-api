@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Loading from './Loading';
 import {BASEURL} from '../utils/global';
 import '../styles/listing.css';
+import '../styles/responsive.css';
+
 // import Label from './Label'; 
 
 class Comment extends Component {

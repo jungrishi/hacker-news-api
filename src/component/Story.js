@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
 import '../styles/listing.css';
+import '../styles/responsive.css';
 
 class Story extends Component {
     constructor(props) {
