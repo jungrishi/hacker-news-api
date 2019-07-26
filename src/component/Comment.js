@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import Loading from './Loading';
 import { BASEURL } from '../utils/global';
 
-// import Label from './Label'; 
-
 class Comment extends Component {
     constructor(props) {
         super(props);
@@ -12,17 +10,26 @@ class Comment extends Component {
             data: [],
             kids: undefined,
             isLoaded: false,
-            depth: 3
+            depth: 3,
+            isMounted: true
         }
         this.i = 0;
+
     }
 
     componentDidMount() {
         this.fetchComment(this.props.id)
     }
 
+    componentWillUnmount() {
+        this.setState({
+            isMounted: !this.state.isMounted
+        })
+    }
+
     fetchComment(id) {
-        fetch(BASEURL + `item/${id}.json`)
+
+        fetch((BASEURL + `item/${id}.json`))
             .then(res => res.json())
             .then(data => {
                 let kids;
