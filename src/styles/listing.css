@@ -49,6 +49,18 @@
     background: white;
 }
 
+.storyHeader {
+    background: rgb(78, 14, 23);
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
 h2 {
     padding: 10px 10px;
     font-size: 30px;
@@ -92,43 +104,14 @@ h3 {
     transition: border-color 1.6s linear;    
 }
 
-/* @media (min-width: 768px) {
-
-    .comments {
-        line-height: 40px;
-        padding: 10px;
-        margin-top: 10px; 
-        border: 4px solid #2b2a2a2a;
-    }
-
-    .comments:hover {
-        border: 4px solid red;
-        transition: border-color 1.6s linear;
-    }
-
-    .text {
-        margin: 0 0 0 25px;
-        border:4px solid #2b2a2a2a;
-        padding: 20px; 
-    }
-
-    .text:hover {
-        border-left: 4px solid lightskyblue;
-    }
-
-    .child .descendant-comment {
-    margin-left: 25px;
-    margin-top: 20px;
-    border-left: 4px solid #2b2a2a2a;
-    transition: border-color 1.6s linear;    
+.pagination {
+    font-size: 24px;
+    color: red;
 }
 
-.child .descendant-comment:hover {
-    border-left: 4px solid lightslategrey;
-    transition: border-color 1.6s linear;   
+i {
+    padding: 10px;
 }
-} */
-
 
 
 
