@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/hacker-news-api/static/css/main.8a9a4b48.chunk.css",
-    "main.js": "/hacker-news-api/static/js/main.2060716f.chunk.js",
-    "main.js.map": "/hacker-news-api/static/js/main.2060716f.chunk.js.map",
+    "main.css": "/hacker-news-api/static/css/main.562356f8.chunk.css",
+    "main.js": "/hacker-news-api/static/js/main.c6ef82d1.chunk.js",
+    "main.js.map": "/hacker-news-api/static/js/main.c6ef82d1.chunk.js.map",
     "runtime~main.js": "/hacker-news-api/static/js/runtime~main.51e5e80e.js",
     "runtime~main.js.map": "/hacker-news-api/static/js/runtime~main.51e5e80e.js.map",
     "static/css/2.055adff4.chunk.css": "/hacker-news-api/static/css/2.055adff4.chunk.css",
-    "static/js/2.fbd38053.chunk.js": "/hacker-news-api/static/js/2.fbd38053.chunk.js",
-    "static/js/2.fbd38053.chunk.js.map": "/hacker-news-api/static/js/2.fbd38053.chunk.js.map",
+    "static/js/2.d8f41ff2.chunk.js": "/hacker-news-api/static/js/2.d8f41ff2.chunk.js",
+    "static/js/2.d8f41ff2.chunk.js.map": "/hacker-news-api/static/js/2.d8f41ff2.chunk.js.map",
     "index.html": "/hacker-news-api/index.html",
-    "precache-manifest.3d265e88329e8f6bcc359bc13bb828c7.js": "/hacker-news-api/precache-manifest.3d265e88329e8f6bcc359bc13bb828c7.js",
+    "precache-manifest.8639ceede9cdcbcd4542a79bee9e9859.js": "/hacker-news-api/precache-manifest.8639ceede9cdcbcd4542a79bee9e9859.js",
     "service-worker.js": "/hacker-news-api/service-worker.js",
     "static/css/2.055adff4.chunk.css.map": "/hacker-news-api/static/css/2.055adff4.chunk.css.map",
-    "static/css/main.8a9a4b48.chunk.css.map": "/hacker-news-api/static/css/main.8a9a4b48.chunk.css.map"
+    "static/css/main.562356f8.chunk.css.map": "/hacker-news-api/static/css/main.562356f8.chunk.css.map"
   }
 }
