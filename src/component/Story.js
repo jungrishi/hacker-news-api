@@ -10,7 +10,6 @@ class Story extends Component {
   }
 
   getPageHistory = () => {
-    console.log(this.props);
     this.props.history.goBack();
   }
 

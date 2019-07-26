@@ -40,9 +40,6 @@ export default (App, url) => {
     }
 
     handlePage = (type) => {
-      console.log(this.state.currentPage);
-      console.log(this.props.history);
-
       if (type == 'Next') {
         if (this.state.currentPage < this.state.totalPage) {
           let currentPage = this.state.currentPage + 1;

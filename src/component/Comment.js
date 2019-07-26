@@ -24,7 +24,6 @@ class Comment extends Component {
     }
 
     fetchComment(id) {
-        console.log('counter')
         fetch((BASEURL + `item/${id}.json`))
             .then(res => res.json())
             .then(data => {
