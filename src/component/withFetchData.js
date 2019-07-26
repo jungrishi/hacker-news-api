@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Loading from './Loading';
 import { BASEURL, LIMIT } from '../utils/global';
 import Header from './Header';
-import CancalPromise from './CancalPromise';
 
 export default (App, url) => {
   return class Post extends Component {
@@ -15,7 +14,6 @@ export default (App, url) => {
         isLoaded: false,
         currentPage: 0,
         totalPage: 5,
-        isMounted: true,
         error: null
       }
 
@@ -23,9 +21,6 @@ export default (App, url) => {
     }
 
     componentDidMount() {
-      // this.setState({
-      //   isMounted: true
-      // })
       fetch((BASEURL + url))
         .then(response => response.json())
         .then(data => {
@@ -38,19 +33,11 @@ export default (App, url) => {
     }
 
     componentDidUpdate(prevPros, prevState) {
-      if (this.props.match.params && prevPros.match.params && this.state.isMounted && this.props.match.params.page != prevPros.match.params.page) {
+      if (this.props.match.params && prevPros.match.params && this.props.match.params.page != prevPros.match.params.page) {
         let data = this.state.ids.slice(this.state.currentPage * LIMIT, (this.state.currentPage + 1) * LIMIT);
         this.fetchStory(data)
       }
     }
-
-    componentWillUnmount() {
-      // this.setState({
-      //   isMounted: false
-      // })
-      this.pendingPromise.map(p => p.ca)
-    }
-
 
     handlePage = (type) => {
       console.log(this.state.currentPage);
@@ -83,13 +70,13 @@ export default (App, url) => {
         .then(data => data.json()));
       let result = Promise.all(actions);
       result.then(res => {
-        if (this.state.isMounted) {
-          this.setState({
-            stories: res,
-            isLoaded: true,
-            i: this.state.i
-          })
-        }
+
+        this.setState({
+          stories: res,
+          isLoaded: true,
+          i: this.state.i
+        })
+
       })
     }
 

@@ -10,30 +10,26 @@ class Comment extends Component {
             data: [],
             kids: undefined,
             isLoaded: false,
-            depth: 3,
-            isMounted: true
         }
-        this.i = 0;
-
+        this.isMount = true;
     }
 
     componentDidMount() {
+        this.isMount = true;
         this.fetchComment(this.props.id)
     }
 
     componentWillUnmount() {
-        this.setState({
-            isMounted: !this.state.isMounted
-        })
+        this.isMount = false;
     }
 
     fetchComment(id) {
-
+        console.log('counter')
         fetch((BASEURL + `item/${id}.json`))
             .then(res => res.json())
             .then(data => {
                 let kids;
-                if (data) {
+                if (data && this.isMount) {
                     kids = data.kids || [];
                     this.setState({
                         data: data,
@@ -54,7 +50,7 @@ class Comment extends Component {
                             dangerouslySetInnerHTML={{ __html: this.state.data.text }}>
                         </div>
                         <div className="child">
-                            {this.state.kids && this.state.kids.length > 0 &&
+                            {this.isMount && this.state.kids && this.state.kids.length > 0 &&
                                 (this.state.kids.map((kid, index) => (
                                     <div key={index} className="descendant-comment">
                                         <Comment id={kid} />
