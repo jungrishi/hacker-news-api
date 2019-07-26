@@ -1,5 +1,5 @@
 const BASEURL = 'https://hacker-news.firebaseio.com/v0/';
-
+const LIMIT = 15;
 // const BREAKPOINTS = {
 //   desktopLg: 1400,
 //   desktopMd: 1300,
@@ -13,5 +13,6 @@ const BASEURL = 'https://hacker-news.firebaseio.com/v0/';
 // }
 
 export {
-        BASEURL
-    }
+    LIMIT,
+    BASEURL
+}

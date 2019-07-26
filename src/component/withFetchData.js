@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Loading from './Loading';
-import { BASEURL } from '../utils/global';
+import { BASEURL, LIMIT } from '../utils/global';
 import Header from './Header';
 
 
@@ -29,14 +29,14 @@ export default (App, url) => {
           this.setState({
             ids: data
           })
-          data = data.slice(this.state.currentPage * 15, (this.state.currentPage + 1) * 15);
+          data = data.slice(this.state.currentPage * LIMIT, (this.state.currentPage + 1) * LIMIT);
           this.fetchStory(data)
         })
     }
 
     componentDidUpdate(prevPros, prevState) {
-      if (this.state.currentPage != prevState.currentPage) {
-        let data = this.state.ids.slice(this.state.currentPage * 15, (this.state.currentPage + 1) * 15);
+      if (this.props.match.params && prevPros.match.params && this.props.match.params.page != prevPros.match.params.page) {
+        let data = this.state.ids.slice(this.state.currentPage * LIMIT, (this.state.currentPage + 1) * LIMIT);
         this.fetchStory(data)
       }
     }
@@ -44,16 +44,22 @@ export default (App, url) => {
 
     handlePage = (type) => {
       console.log(this.state.currentPage);
+      console.log(this.props.history);
+
       if (type == 'Next') {
         if (this.state.currentPage < this.state.totalPage) {
+          let currentPage = this.state.currentPage + 1;
+          this.props.history.push(`/${currentPage}`);
           this.setState({
-            currentPage: this.state.currentPage + 1
+            currentPage: currentPage
           })
         }
       } else {
         if (this.state.currentPage > 0) {
+          let currentPage = this.state.currentPage - 1;
+          this.props.history.push(`/${currentPage}`);
           this.setState({
-            currentPage: this.state.currentPage - 1
+            currentPage: currentPage
           })
         }
       }

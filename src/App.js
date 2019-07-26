@@ -18,7 +18,7 @@ function App() {
         <Router basename="/hacker-news-api">
           <Switch >
             {/* <Header /> */}
-            <Route exact path="/" component={ListStory} />
+            <Route exact path="/:page?" component={ListStory} />
             <Route exact path="/stories/:storyId" component={Story} />
             <Route path="*" component={NotFound} />
           </Switch>
